@@ -1,5 +1,6 @@
 #include "Window.hpp"
 
+#include <exception>
 #include <string>
 
 #include "Windows.h"
@@ -13,12 +14,16 @@ namespace
     wc.lpfnWndProc = DefWindowProc;
     wc.hInstance = GetModuleHandle(NULL);
     wc.lpszClassName = className.c_str();
-    RegisterClass(&wc);
+    if (0 == RegisterClassA(&wc))
+    {
+      throw "RegisterClass failed";
+    }
     return className;
   }
 }
 
-Window::Window()
+Window::Window() :
+  _handle(NULL)
 {
 }
 
@@ -29,6 +34,12 @@ bool Window::Create(const std::string window_name, int width, int height)
   GetWindowRect(GetDesktopWindow(), &desktop);
   const int x = desktop.right / 2;
   const int y = desktop.bottom / 2;
-  CreateWindow(RegisterName().c_str(), window_name.c_str(), style, x, y, 
+  _handle = CreateWindowExA(0, RegisterName().c_str(), window_name.c_str(), style, x, y,
                width, height, NULL, NULL, GetModuleHandle(NULL), NULL);
+  if (_handle == NULL)
+  {
+    throw "CreateWindowExA failed";
+  }
+  ShowWindow(_handle, SW_SHOW);
+  return true;
 }
