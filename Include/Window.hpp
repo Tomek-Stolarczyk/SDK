@@ -1,4 +1,5 @@
-#pragma once
+#ifndef SDK_WINDOW_HPP
+#define SDK_WINDOW_HPP 
 
 #include <string>
 #define WIN32_LEAN_AND_MEAN
@@ -14,3 +15,5 @@ public:
 private:
   HWND _handle;
 };
+
+#endif
