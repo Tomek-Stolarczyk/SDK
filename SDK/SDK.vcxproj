@@ -171,8 +171,8 @@
   <ItemGroup>
     <ClInclude Include="..\Include\Window.hpp" />
     <ClInclude Include="COMPointer.hpp" />
+    <ClInclude Include="RenderDevice.hpp" />
     <ClInclude Include="SwapChainFactory.hpp" />
-    <ClInclude Include="SwapChain.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -1,6 +1,8 @@
 #ifndef SDK_SWAPCHAIN_HPP
 #define SDK_SWAPCHAIN_HPP
 
+#include "COMPointer.hpp"
+
 #include <memory>
 
 #include <dxgi.h>
@@ -8,10 +10,10 @@
 class SwapChain
 {
 public:
-	SwapChain();
+	SwapChain(COM<IDXGISwapChain> &&swapChain);
 
 private:
-	std::unique_ptr<IDXGISwapChain*> swapchain_;
+	COM<IDXGISwapChain> swapChain_;
 };
 
 #endif

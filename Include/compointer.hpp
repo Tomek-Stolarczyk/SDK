@@ -1,3 +1,6 @@
+#ifndef SDK_COMPOINTER_HPP
+#define SDK_COMPOINTER_HPP
+
 template <typename T>
 class COM
 {
@@ -31,6 +34,13 @@ public:
 	{
 		return &pointer_;
 	}
+
+	T* operator->()
+	{
+		return pointer_;
+	}
 private:
 	T* pointer_ = nullptr;
 };
+
+#endif

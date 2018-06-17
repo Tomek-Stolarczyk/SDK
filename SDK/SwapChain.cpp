@@ -1,5 +1,8 @@
 #include "SwapChain.hpp"
 
-SwapChain::SwapChain()
+#include <utility>
+
+SwapChain::SwapChain(COM<IDXGISwapChain>&& swapChain) :
+	swapChain_(std::forward<COM<IDXGISwapChain>>(swapChain))
 {
 }

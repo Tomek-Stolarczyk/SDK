@@ -2,6 +2,8 @@
 #define SDK_SWAPCHAINFACTORY_HPP
 
 #include "SwapChain.hpp"
+#include "COMPointer.hpp"
+#include "RenderDevice.hpp"
 
 #include <memory>
 
@@ -11,12 +13,10 @@ class SwapChainFactory
 {
 public:
 	SwapChainFactory();
-	SwapChain CreateSwapChain();
+	SwapChain CreateSwapChain(RenderDevice device, DXGI_SWAP_CHAIN_DESC* desc);
 
 private:
-	std::unique_ptr<IDXGIFactory> factory_;
+	COM<IDXGIFactory> factory_;
 };
 
 #endif
-
-
