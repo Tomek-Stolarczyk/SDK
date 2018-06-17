@@ -27,7 +27,6 @@ public:
 	~COM()
 	{
 		pointer_->Release();
-
 	}
 	
 	T** operator&()
