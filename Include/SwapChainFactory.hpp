@@ -13,7 +13,7 @@ class SwapChainFactory
 {
 public:
 	SwapChainFactory();
-	SwapChain CreateSwapChain(RenderDevice device, DXGI_SWAP_CHAIN_DESC* desc);
+	SwapChain CreateSwapChain(RenderDevice* device, DXGI_SWAP_CHAIN_DESC* desc);
 
 private:
 	COM<IDXGIFactory> factory_;

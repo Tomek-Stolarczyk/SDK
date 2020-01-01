@@ -32,13 +32,13 @@
     <ClInclude Include="..\Include\Window.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="SwapChainFactory.hpp">
+    <ClInclude Include="..\Include\compointer.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="COMPointer.hpp">
+    <ClInclude Include="..\Include\RenderDevice.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="RenderDevice.hpp">
+    <ClInclude Include="..\Include\SwapChain.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

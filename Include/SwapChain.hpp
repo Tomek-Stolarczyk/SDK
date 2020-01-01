@@ -3,8 +3,6 @@
 
 #include "COMPointer.hpp"
 
-#include <memory>
-
 #include <dxgi.h>
 
 class SwapChain

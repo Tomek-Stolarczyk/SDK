@@ -169,10 +169,10 @@
     <ClCompile Include="Window.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\Include\compointer.hpp" />
+    <ClInclude Include="..\Include\RenderDevice.hpp" />
+    <ClInclude Include="..\Include\SwapChain.hpp" />
     <ClInclude Include="..\Include\Window.hpp" />
-    <ClInclude Include="COMPointer.hpp" />
-    <ClInclude Include="RenderDevice.hpp" />
-    <ClInclude Include="SwapChainFactory.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

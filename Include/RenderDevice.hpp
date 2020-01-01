@@ -6,7 +6,7 @@
 class RenderDevice
 {
 public:
-	virtual IUnknown* GetRealRenderDevice() { return nullptr; }
+  virtual IUnknown* GetRealRenderDevice() = 0;
 };
 
 #endif
