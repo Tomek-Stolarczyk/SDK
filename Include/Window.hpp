@@ -31,8 +31,11 @@ public:
   void HideWindow();
   bool IsVisible();
 
+protected:
+  HWND GetHWND() const;
+
 private:
-  HWND handle_;
+  HWND _handle;
 };
 
 } // namespace Window

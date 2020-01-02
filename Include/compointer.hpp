@@ -21,7 +21,7 @@ public:
 	COM(const COM& other)
 	{
 		pointer_ = other.pointer_;
-		pointer.AddRef();
+		pointer_.AddRef();
 	}
 	
 	~COM()
@@ -38,8 +38,14 @@ public:
 	{
 		return pointer_;
 	}
+
+  T* get() const
+  {
+    return pointer_;
+  }
+
 private:
 	T* pointer_ = nullptr;
 };
 
-#endif
+#endif // !SDK_COMPOINTER_HPP

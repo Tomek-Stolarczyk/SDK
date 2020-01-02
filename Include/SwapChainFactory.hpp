@@ -9,14 +9,24 @@
 
 #include <dxgi.h>
 
-class SwapChainFactory
+namespace SDK
 {
-public:
-	SwapChainFactory();
-	SwapChain CreateSwapChain(RenderDevice* device, DXGI_SWAP_CHAIN_DESC* desc);
+namespace SwapChainFactory
+{
+  class SwapChainFactory
+  {
+  public:
+    SwapChainFactory();
 
-private:
-	COM<IDXGIFactory> factory_;
-};
+    SwapChain::SwapChain CreateSwapChain(
+      const RenderDevice::RenderDevice* device,
+      const DXGI_SWAP_CHAIN_DESC* desc);
 
-#endif
+  private:
+    COM<IDXGIFactory> factory_;
+  };
+
+} // namespace SwapChainFactory
+} // namespace SDK
+
+#endif // !_SDK_SWAPCHAINFACTORY_HPP_

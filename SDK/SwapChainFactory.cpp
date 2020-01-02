@@ -2,17 +2,27 @@
 
 #include <assert.h>
 
-SwapChainFactory::SwapChainFactory()
+namespace SDK
 {
-	HRESULT result = CreateDXGIFactory(IID_PPV_ARGS(&factory_));
-	assert(S_OK == result);
-}
+namespace SwapChainFactory
+{
+  SwapChainFactory::SwapChainFactory()
+  {
+    HRESULT result = CreateDXGIFactory(IID_PPV_ARGS(&factory_));
+    assert(S_OK == result);
+  }
 
-SwapChain SwapChainFactory::CreateSwapChain(RenderDevice* device,
-                                            DXGI_SWAP_CHAIN_DESC* desc)
-{
-	COM<IDXGISwapChain> newSwapChain;
-	factory_->CreateSwapChain(device->GetRealRenderDevice(),
-                            desc, &newSwapChain);
-	return SwapChain(std::move(newSwapChain));
-}
+  SwapChain::SwapChain SwapChainFactory::CreateSwapChain(
+    const RenderDevice::RenderDevice* device,
+    const DXGI_SWAP_CHAIN_DESC* desc)
+  {
+    COM<IDXGISwapChain> new_swap;
+    HRESULT result = factory_->CreateSwapChain(
+      device->GetRealRenderDevice(),
+      const_cast<DXGI_SWAP_CHAIN_DESC*>(desc),
+      &new_swap);
+    assert(S_OK == result);
+    return SwapChain::SwapChain(std::move(new_swap));
+  }
+} // namespace SwapChainFactory
+} // namespace SDK

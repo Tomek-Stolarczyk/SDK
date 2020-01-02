@@ -5,13 +5,19 @@
 
 #include <dxgi.h>
 
-class SwapChain
+namespace SDK
 {
-public:
-	SwapChain(COM<IDXGISwapChain> &&swapChain);
+namespace SwapChain
+{
+  class SwapChain final
+  {
+  public:
+    SwapChain(COM<IDXGISwapChain>&& swapChain);
 
-private:
-	COM<IDXGISwapChain> swapChain_;
-};
+  private:
+    COM<IDXGISwapChain> swapChain_;
+  };
+} // namespace SwapChain
+} // namespace SDK
 
-#endif
+#endif // !SDK_SWAPCHAIN_HPP
