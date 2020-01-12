@@ -5,6 +5,7 @@
 
 #include "Window.hpp"
 #include "RenderDevice.hpp"
+#include "Surface.hpp"
 #include "SwapChain.hpp"
 #include "SwapChainFactory.hpp"
 

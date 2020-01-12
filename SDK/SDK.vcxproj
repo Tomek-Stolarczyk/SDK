@@ -23,7 +23,7 @@
     <ProjectGuid>{9C4A087C-6B8F-4264-91D7-E7881E2D05E2}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>SDK</RootNamespace>
-    <WindowsTargetPlatformVersion>10.0.17763.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0.17134.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -168,12 +168,14 @@
     <ClCompile Include="SwapChainFactory.cpp" />
     <ClCompile Include="SDK.cpp" />
     <ClCompile Include="SwapChain.cpp" />
+    <ClCompile Include="Surface.cpp" />
     <ClCompile Include="Window.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Include\compointer.hpp" />
     <ClInclude Include="..\Include\RenderDevice.hpp" />
     <ClInclude Include="..\Include\RenderWindow.hpp" />
+    <ClInclude Include="..\Include\Surface.hpp" />
     <ClInclude Include="..\Include\SwapChain.hpp" />
     <ClInclude Include="..\Include\Window.hpp" />
   </ItemGroup>

@@ -13,6 +13,7 @@ namespace RenderDevice
   class RenderDevice
   {
   public:
+    virtual ~RenderDevice() = default;
     virtual IUnknown* GetRealRenderDevice() const = 0;
   };
 

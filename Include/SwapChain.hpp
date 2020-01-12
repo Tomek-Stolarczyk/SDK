@@ -9,9 +9,10 @@ namespace SDK
 {
 namespace SwapChain
 {
-  class SwapChain final
+  class SwapChain
   {
   public:
+    virtual ~SwapChain() = default;
     SwapChain(COM<IDXGISwapChain>&& swapChain);
 
   private:
